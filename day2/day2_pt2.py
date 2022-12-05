@@ -1,7 +1,6 @@
 file = open('strategy_guide.txt', 'r')
 lines = file.readlines()
 
-# Method 1 iterate through all games and assign hand based on desired result and opponents hand.
 hand = {
     "rock": 1,
     "paper": 2,
