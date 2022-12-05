@@ -47,6 +47,7 @@ print(score)
 
 
 # Method 3 Python map function:
+
 score = {
     'A X': 3 + 1,
     'A Y': 6 + 2,
@@ -64,4 +65,6 @@ def replace(i):
     if i in score.keys():
         return score[line]
 
+
+result = map(replace, lines)
 print(sum(list(result)))
