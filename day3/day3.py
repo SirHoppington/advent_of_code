@@ -59,10 +59,25 @@ items = {
 
 
 total = 0
+
 for line in lines:
     line = line.strip()
     first_half = [items[x] for x in line[:(int(len(line) / 2))]]
     second_half = [items[x] for x in line[(int(len(line) / 2)):]]
     result = [x for x in first_half if x in second_half]
     total += result[0]
+
+# Part 2:
+badge_total = 0
+stripped = []
+for line in lines:
+        line = line.strip()
+        result = [items[x] for x in line]
+        stripped.append(result)
+groups = [stripped[x:x+3] for x in range(0, len(lines), 3)]
+for group in groups:
+        badge = [x for x in group[0] if x in group[1] and x in group[2]]
+        badge_total += badge[0]
+
 print(total)
+print(badge_total)
