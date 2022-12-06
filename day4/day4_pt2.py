@@ -1,7 +1,6 @@
 file = open('cleaning.txt', 'r')
 lines = file.readlines()
 
-counter = 0
 counter_pt2 = 0
 for line in lines:
     line = line.split()
@@ -12,11 +11,7 @@ for line in lines:
     elf1_range = list(range(int(elf1[0]), int(elf1[1]) + 1))
     elf2_range = list(range(int(elf2[0]), int(elf2[1]) + 1))
     elf1_match = [x for x in elf1_range if x in elf2_range]
-    elf2_match = [x for x in elf2_range if x in elf1_range]
-    # Check if Elf 1 match is equal to all of Elf 1's section
-    if elf1_match == list(elf1_range):
-        counter +=1
-    # Check if Elf 2 match is equal to all of Elf 2's section
-    elif elf2_match == list(elf2_range):
-        counter +=1
-print(counter)
+    #counter +=1
+    if elf1_match:
+        counter_pt2+=1
+print(counter_pt2)
