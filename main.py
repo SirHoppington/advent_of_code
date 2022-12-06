@@ -26,6 +26,5 @@ day4_lines = open_file('day4/cleaning.txt')
 day4_pt2(day4_lines)
 
 #Execute day 5 function
-day5_lines = open_file('day5/starting_stack.txt')
-day5_pt1(day5_lines)
+day5_pt1()
 
