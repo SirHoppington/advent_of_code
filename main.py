@@ -5,6 +5,7 @@ from day4.day4_pt2 import day4_pt2
 from day5.day5 import day5_pt1
 from day5.day5_pt2 import day5_pt2
 from day6.day6 import day6_pt1
+from day6.day6_pt2 import day6_pt2
 from utilities import open_file
 
 #Execute day 1 function
@@ -33,3 +34,4 @@ day5_pt2()
 
 day6_lines = open_file('day6/datastream.txt')
 day6_pt1()
+day6_pt2()
