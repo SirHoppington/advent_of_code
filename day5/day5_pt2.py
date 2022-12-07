@@ -27,4 +27,7 @@ def day5_pt2():
             crates.append(x)
         for crate in reversed(crates):
             stacks[finishing_position].insert(0, crate)
+    result = []
+    for x, y in stacks.items():
+        result.append(y[0])
     return stacks

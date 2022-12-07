@@ -25,4 +25,7 @@ def day5_pt1():
             counter -= 1
             x = stacks[starting_position].pop(0)
             stacks[finishing_position].insert(0, x)
+    result = []
+    for x, y in stacks.items():
+        result.append(y[0])
     return stacks
