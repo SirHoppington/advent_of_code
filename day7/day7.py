@@ -6,25 +6,31 @@ def day7_pt1():
     lines = file.readlines()
     tree = []
     sizes = defaultdict(int)
-    print(sizes)
     for line in lines:
-        if line.startswith('$ cd'):
+        if  "$ cd" in line:
             s = line.split()[-1]
             if s == '..':
                 tree.pop()
             else:
                 tree.append(s)
-        elif line.startswith('$ ls'):
+        elif "$ ls" in line:
             continue
         else:
             size = line.split()[-2]
             if size.isdigit():
                 size = int(size)
                 for i in range(len(tree)):
-                    print(tree[:i+1])
                     sizes['/'.join(tree[:i+1])] += size
     result = 0
     for key, value in sizes.items():
         if value <= 100_000:
             result += value
-    print(result)
+
+    # part 2:
+    disk_space = 70000000 - sizes['/']
+    required = 30000000 - disk_space
+    for size in sorted(sizes.values()):
+        if size >= required:
+            print(size)
+            break
+
